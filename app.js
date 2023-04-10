@@ -4,9 +4,7 @@ const observer = new IntersectionObserver((entries) => {
         // do something
             if(entry.target.classList.contains('hidden')) {
                 entry.target.classList.add('active');
-            }else{
-                entry.target.classList.remove('active');
-
+                //entry.target.classList.remove('hidden');
             }
 
             if(entry.target.classList.contains('hidden-text')) {
@@ -15,6 +13,7 @@ const observer = new IntersectionObserver((entries) => {
                 if(entry.target.id === 'transition'){
                     $('body').addClass('bg-cool');
                     $('#social_media').hide();
+                    //$('#img1').hide();
                 }
 
             }else{
@@ -24,9 +23,19 @@ const observer = new IntersectionObserver((entries) => {
             if (entry.target.id ==='nobg'){
                 $('body').removeClass('bg-cool');
                 $('#social_media').show();
+                //$('#img1').show();
             }
-            console.log(entry.target.id);
+            //console.log(entry.target.id);
+        }else{
+            entry.target.classList.remove('active');
+            entry.target.classList.remove('active-text');
+            //console.log(entry.target);
+            //entry.target.classList.add('hidden');
         }
+
+
+
+
     });
 });
 
