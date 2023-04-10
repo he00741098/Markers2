@@ -14,6 +14,7 @@ const observer = new IntersectionObserver((entries) => {
                 //document.body.background = "background-image: linear-gradient(white, black)";
                 if(entry.target.id === 'transition'){
                     $('body').addClass('bg-cool');
+                    $('#social_media').hide();
                 }
 
             }else{
@@ -22,6 +23,7 @@ const observer = new IntersectionObserver((entries) => {
             }
             if (entry.target.id ==='nobg'){
                 $('body').removeClass('bg-cool');
+                $('#social_media').show();
             }
             console.log(entry.target.id);
         }
